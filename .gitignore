@@ -2,8 +2,8 @@
 node_modules/
 
 # Logs
-*.log
-npm-debug.log*
+# *.log
+# npm-debug.log*
 
 # Dependency directories
 # .pnp
