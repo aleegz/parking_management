@@ -2,25 +2,25 @@
 node_modules/
 
 # Logs
-# *.log
-# npm-debug.log*
+*.log
+npm-debug.log*
 
 # Dependency directories
-# .pnp
-# .pnp.js
+.pnp
+.pnp.js
 
 # IDEs and editors
-# .idea/
-# .vscode/
-# .DS_Store
-# *.suo
-# *.ntvs*
-# *.njsproj
-# *.sln
+.idea/
+.vscode/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
 # Mac system files
 .DS_Store
 
-# # Environment files
-# .env
-# .env.*.local
+# Environment files
+.env
+.env.*.local

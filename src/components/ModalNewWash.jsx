@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/Modal.module.scss";
+import car from "../assets/images/logo_car.png";
+import pickup from "../assets/images/logo_pickup.png";
+import moto from "../assets/images/logo_moto.png";
 
 function Modal({ onConfirm, onClose, wash }) {
   const [selectedVehicle, setSelectedVehicle] = useState(wash ? wash.type : "");
@@ -48,7 +51,7 @@ function Modal({ onConfirm, onClose, wash }) {
               }`}
               onClick={() => setSelectedVehicle("Car")}
             >
-              <img src="src/assets/images/logo_car.png" alt="car" />
+              <img src={car} alt="car" />
             </button>
 
             <button
@@ -57,7 +60,7 @@ function Modal({ onConfirm, onClose, wash }) {
               }`}
               onClick={() => setSelectedVehicle("Pickup")}
             >
-              <img src="src/assets/images/logo_pickup.png" alt="pickup" />
+              <img src={pickup} alt="pickup" />
             </button>
 
             <button
@@ -68,7 +71,7 @@ function Modal({ onConfirm, onClose, wash }) {
             >
               <img
                 className={styles.img_moto}
-                src="src/assets/images/logo_moto.png"
+                src={moto}
                 alt="moto"
               />
             </button>
