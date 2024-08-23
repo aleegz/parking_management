@@ -73,7 +73,7 @@ function Washes() {
   const images = {
     Car: car,
     Pickup: pickup,
-    Moto: moto,
+    Moto: moto
   };
 
   return (
@@ -83,7 +83,7 @@ function Washes() {
         <div className={styles.washesContainer}>
           <div className={styles.washes}>
             {washes.map((wash, index) => {
-              const imageSrc = images[wash.type];
+              const imageSrc = wash.image || images[wash.type];
               return (
                   <div key={index} className={styles.itemWash}>
                     <img src={imageSrc} className={styles.washTypeImg} />
