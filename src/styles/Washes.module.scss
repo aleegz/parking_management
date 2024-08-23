@@ -48,8 +48,8 @@ body {
     justify-content: space-around;
 
     .washTypeImg {
-      width: 3.5em;
-      height: auto;
+      width: fit-content;
+      height: 3.5em;
       margin-right: 0.3em;
       border-radius: 50%;
     }
