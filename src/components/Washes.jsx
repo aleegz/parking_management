@@ -78,10 +78,6 @@ function Washes() {
 
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-      />
       <div className={styles.container}>
         <h1>Lavados</h1>
         <div className={styles.washesContainer}>
