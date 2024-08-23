@@ -56,7 +56,9 @@ function Modal({ onConfirm, onClose, wash }) {
     <>
       <div className={styles.modalOverlay}>
         <div className={styles.modal}>
-          <h1 className={styles.title}>{wash ? "Editar Lavado" : "Seleccione el tipo de vehículo"}</h1>
+          <h1 className={styles.title}>
+            {wash ? "Editar Lavado" : "Seleccione el tipo de vehículo"}
+          </h1>
 
           <div className={styles.vehicles}>
             <button
@@ -107,24 +109,19 @@ function Modal({ onConfirm, onClose, wash }) {
 
             <button className={styles.add_img} onClick={openCamera}>
               <span className="material-symbols-outlined">add_a_photo</span>
+              <input
+                type="file"
+                accept="image/*"
+                capture="environment"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleImageUpload}
+              />
             </button>
           </div>
           {image && (
-            <img
-              src={image}
-              alt="preview"
-              className={styles.imagePreview}
-            />
+            <img src={image} alt="preview" className={styles.imagePreview} />
           )}
-
-          <input
-            type="file"
-            accept="image/*"
-            capture="environment"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            onChange={handleImageUpload}
-          />
 
           <div className={styles.buttons}>
             <button className={styles.btn_confirm} onClick={handleConfirm}>
