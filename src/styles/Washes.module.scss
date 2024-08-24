@@ -9,7 +9,7 @@ body {
   background-color: #191919;
   color: #d4d4d4;
   display: flex;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
@@ -46,16 +46,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 0.3em 0;
 
     .washTypeImg {
-      width: 3.5em;
-      height: 3.5em;
+      width: 5em;
+      height: 5em;
       object-fit: cover;
-      margin-right: 0.3em;
+      margin: 0 0.3em;
       border-radius: 50%;
     }
 
     .washText {
+      width: -webkit-fill-available;
+      margin-left: .3em;
       p {
         margin: 0;
       }
@@ -63,17 +66,18 @@ body {
 
     .buttons {
       display: flex;
-      width: 20%;
+      width: auto;
       flex-direction: column;
       align-items: flex-end;
       justify-content: space-around;
       height: 100%;
+      margin: 0 0.3em;
 
       button {
         display: flex;
         border: none;
         border-radius: 25%;
-        padding: .3em;
+        padding: 0.3em;
         background-color: #d4d4d4;
       }
     }

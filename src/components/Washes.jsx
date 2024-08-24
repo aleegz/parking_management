@@ -73,7 +73,7 @@ function Washes() {
   const images = {
     Car: car,
     Pickup: pickup,
-    Moto: moto
+    Moto: moto,
   };
 
   return (
@@ -85,23 +85,28 @@ function Washes() {
             {washes.map((wash, index) => {
               const imageSrc = wash.image || images[wash.type];
               return (
-                  <div key={index} className={styles.itemWash}>
-                    <img src={imageSrc} className={styles.washTypeImg} />
-                    <div className={styles.washText}>
-                      <p>${wash.price}</p>
-                      <p style={{ fontSize: "1em" }}>{wash.details}</p>
-                      <p> </p>
+                <div key={index} className={styles.itemWash}>
+                  <img src={imageSrc} className={styles.washTypeImg} />
+                  <div className={styles.washText}>
+                    <p>${wash.price}</p>
+                    <p style={{ fontSize: "1em" }}>{wash.details}</p>
+                    <p style={{ fontSize: "1em", display: "flex", alignItems: "center" }}>
+                      {" "}
+                      <span className="material-symbols-outlined" style={{ fontSize: "1.2em", margin: "0 .1em 0 0" }}>
+                        calendar_today
+                      </span>
                       {formatDateTime(wash.datetime)}
-                    </div>
-                    <div className={styles.buttons}>
-                      <button onClick={() => handleEditWash(index)}>
-                        <span className="material-symbols-outlined">edit</span>
-                      </button>
-                      <button onClick={() => handleDeleteWash(index)}>
-                        <span className="material-symbols-outlined">delete</span>
-                      </button>
-                    </div>
+                    </p>
                   </div>
+                  <div className={styles.buttons}>
+                    <button onClick={() => handleEditWash(index)}>
+                      <span className="material-symbols-outlined">edit</span>
+                    </button>
+                    <button onClick={() => handleDeleteWash(index)}>
+                      <span className="material-symbols-outlined">delete</span>
+                    </button>
+                  </div>
+                </div>
               );
             })}
           </div>
