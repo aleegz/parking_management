@@ -9,6 +9,7 @@ body {
   background-color: #191919;
   color: #d4d4d4;
   display: flex;
+  min-height: 100vh;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
@@ -27,16 +28,6 @@ body {
     padding: 0;
   }
 
-  .btn_add {
-    margin: 0 0.5em 0.5em 0.5em;
-    padding: 0.5em;
-    font-family: "Kanit";
-    font-size: 1.2em;
-    background-color: #268b1d;
-    border: none;
-    color: #fff;
-  }
-
   .itemWash {
     background-color: #202020;
     height: 5em;
@@ -47,6 +38,7 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 0.3em 0;
+    width: auto;
 
     .washTypeImg {
       width: 5em;
@@ -88,6 +80,8 @@ body {
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
+    margin-bottom: 5.8em;
+
     .washes {
       margin-top: 1em;
     }
@@ -95,5 +89,27 @@ body {
       font-size: 1.5em;
       margin: 0.3em 0.5em;
     }
+  }
+}
+
+.add {
+  background: #151515;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  p {
+    margin: .3em 0 .3em .3em;
+    font-size: 1.5em;
+  }
+
+  .btn_add {
+    padding: 0.5em;
+    font-family: "Kanit";
+    font-size: 1.2em;
+    background-color: #268b1d;
+    border: none;
+    color: #fff;
+    width: 100%;
   }
 }

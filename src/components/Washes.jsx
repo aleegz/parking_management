@@ -90,9 +90,18 @@ function Washes() {
                   <div className={styles.washText}>
                     <p>${wash.price}</p>
                     <p style={{ fontSize: "1em" }}>{wash.details}</p>
-                    <p style={{ fontSize: "1em", display: "flex", alignItems: "center" }}>
+                    <p
+                      style={{
+                        fontSize: "1em",
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
                       {" "}
-                      <span className="material-symbols-outlined" style={{ fontSize: "1.2em", margin: "0 .1em 0 0" }}>
+                      <span
+                        className="material-symbols-outlined"
+                        style={{ fontSize: "1.2em", margin: "0 .1em 0 0" }}
+                      >
                         calendar_today
                       </span>
                       {formatDateTime(wash.datetime)}
@@ -110,12 +119,17 @@ function Washes() {
               );
             })}
           </div>
-          <p>Total: ${washesSum}</p>
         </div>
 
-        <button className={styles.btn_add} onClick={() => setIsModalOpen(true)}>
-          Añadir Lavado
-        </button>
+        <div className={styles.add}>
+          <p>Total: ${washesSum}</p>
+          <button
+            className={styles.btn_add}
+            onClick={() => setIsModalOpen(true)}
+          >
+            Añadir Lavado
+          </button>
+        </div>
 
         {isModalOpen && (
           <ModalNewWash
