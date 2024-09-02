@@ -10,6 +10,7 @@ function Washes() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editIndex, setEditIndex] = useState(null); // Estado para saber si estamos editando
   const [currentWash, setCurrentWash] = useState(null); // Estado para los datos del lavado actual
+  const [state, setState] = useState(true); // Desactivar botón en caso de error
 
   useEffect(() => {
     const storedWashes = localStorage.getItem("washes");
@@ -19,8 +20,19 @@ function Washes() {
   }, []);
 
   const saveWashesToLocalStorage = (washes) => {
-    localStorage.setItem("washes", JSON.stringify(washes));
-  };
+    try {
+        localStorage.setItem("washes", JSON.stringify(washes));
+    } catch (e) {
+        if (e.name === 'QuotaExceededError') {
+            console.error('Local storage quota exceeded');
+            alert('No se pudo guardar el lavado: Almacenamiento lleno');
+            setState(false); // En caso de error establece el estado a false
+        } else {
+            console.error('An error occurred while saving to local storage', e);
+            setState(false);
+        }
+    }
+};
 
   const handleAddOrEditWash = (newWash) => {
     let updatedWashes;
@@ -125,7 +137,7 @@ function Washes() {
           <p>Total: ${washesSum}</p>
           <button
             className={styles.btn_add}
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => state ? setIsModalOpen(true) : alert("Almacenamiento lleno")}
           >
             Añadir Lavado
           </button>
