@@ -40,7 +40,7 @@ body {
     width: auto;
 
     .washTypeImg {
-      width: 5em;
+      min-width: 5em;
       height: 5em;
       object-fit: cover;
       margin: 0 0.3em;

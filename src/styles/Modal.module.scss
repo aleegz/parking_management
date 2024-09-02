@@ -114,12 +114,18 @@
     object-fit: contain;
   }
 
+  .msgError {
+    margin: .5em 0 0 0;
+    display: flex;
+    width: 90%;
+  }
+
   .buttons {
     width: 100%;
     display: flex;
 
     .btn_confirm {
-      margin-top: 0.5em;
+      margin-top: .3em;
       width: 100%;
       height: 2em;
       font-size: 2em;
@@ -129,7 +135,7 @@
     }
 
     .btn_cancel {
-      margin-top: 0.5em;
+      margin-top: .3em;
       width: 100%;
       height: 2em;
       font-size: 2em;

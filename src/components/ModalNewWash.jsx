@@ -10,6 +10,7 @@ function Modal({ onConfirm, onClose, wash }) {
   const [details, setDetails] = useState(wash ? wash.details : "");
   const [image, setImage] = useState(wash ? wash.image : null); // Estado para la imagen seleccionada
   const fileInputRef = useRef(null); // Referencia al input de archivo
+  const [msg, setMsg] = useState('');
 
   useEffect(() => {
     if (!wash) {
@@ -34,6 +35,9 @@ function Modal({ onConfirm, onClose, wash }) {
         image, // Incluye la imagen en el objeto de lavado
       };
       onConfirm(newWash); // Pasa los datos al componente `Washes`
+      setMsg(''); // Limpia el mensaje si es exitoso
+    } else {
+      setMsg('Error: Please select a vehicle.');
     }
   };
 
@@ -119,6 +123,13 @@ function Modal({ onConfirm, onClose, wash }) {
               />
             </button>
           </div>
+          {
+            (msg && (
+              <p className={styles.msgError}>
+                <span className="material-symbols-outlined">error</span>Error: Selecciona el tipo de vehículo
+              </p>
+            ))
+          }
           {image && (
             <img src={image} alt="preview" className={styles.imagePreview} />
           )}
